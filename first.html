@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form and Product Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container, .table-container {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form action="/submit_registration" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <div class="table-container">
+        <h2>Product Information</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product 1</td>
+                    <td>$10.00</td>
+                </tr>
+                <tr>
+                    <td>Product 2</td>
+                    <td>$20.00</td>
+                </tr>
+                <tr>
+                    <td>Product 3</td>
+                    <td>$30.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="paragraph-container">
+        <h2>Special Characters</h2>
+        <p>This is an example of a paragraph that includes special characters like &copy;, &reg;, &amp;, &euro;, and &pound;.</p>
+    </div>
+</body>
+</html>

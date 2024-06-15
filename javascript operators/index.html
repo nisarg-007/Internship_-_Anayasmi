@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Operations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>JavaScript Operations</h1>
+
+    <div class="operation-section">
+        <h2>Arithmetic Operations</h2>
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" />
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" />
+        <button onclick="performArithmetic()">Calculate</button>
+        <div id="arithmeticResult"></div>
+    </div>
+
+    <div class="operation-section">
+        <h2>Comparison Operations</h2>
+        <label for="comp1">Value 1:</label>
+        <input type="text" id="comp1" />
+        <label for="comp2">Value 2:</label>
+        <input type="text" id="comp2" />
+        <button onclick="performComparison()">Compare</button>
+        <div id="comparisonResult"></div>
+    </div>
+
+    <div class="operation-section">
+        <h2>Logical Operations</h2>
+        <label for="bool1">Boolean 1 (true/false):</label>
+        <input type="text" id="bool1" />
+        <label for="bool2">Boolean 2 (true/false):</label>
+        <input type="text" id="bool2" />
+        <button onclick="performLogic()">Evaluate</button>
+        <div id="logicResult"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

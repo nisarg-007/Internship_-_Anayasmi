@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Hands-On Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .exercise {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            font-family: monospace;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .effect {
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+<h1>JavaScript Hands-On Exercises</h1>
+
+<div class="exercise">
+    <p>1. Change the text of the button below to "Clicked!" when the button is clicked. Write the function named <code>changeButtonText</code>.</p>
+    <button id="btn1">Click me</button>
+    <textarea id="code1">function changeButtonText() {
+    document.getElementById('btn1').textContent = 'Clicked!';
+}</textarea>
+    <button onclick="runCode1()">Run Code</button>
+    <div class="feedback" id="code1-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>2. Change the background color of the div below to lightblue. Write the function named <code>changeBackgroundColor</code>.</p>
+    <div id="div2" class="effect">This is a div.</div>
+    <textarea id="code2"></textarea>
+    <button onclick="runCode2()">Run Code</button>
+    <div class="feedback" id="code2-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>3. Hide the paragraph below when the button is clicked. Write the function named <code>hideParagraph</code>.</p>
+    <p id="p3">This is a paragraph.</p>
+    <button id="btn3">Hide Paragraph</button>
+    <textarea id="code3"></textarea>
+    <button onclick="runCode3()">Run Code</button>
+    <div class="feedback" id="code3-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>4. Change the text of the input box below to "Hello, World!". Write the function named <code>changeInputText</code>.</p>
+    <input type="text" id="input4" />
+    <textarea id="code4"></textarea>
+    <button onclick="runCode4()">Run Code</button>
+    <div class="feedback" id="code4-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>5. Show an alert with the text from the input box below when the button is clicked. Write the function named <code>showAlert</code>.</p>
+    <input type="text" id="input5" />
+    <button id="btn5">Show Alert</button>
+    <textarea id="code5"></textarea>
+    <button onclick="runCode5()">Run Code</button>
+    <div class="feedback" id="code5-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>6. Change the font size of the paragraph below to 20px. Write the function named <code>changeFontSize</code>.</p>
+    <p id="p6">This is another paragraph.</p>
+    <textarea id="code6"></textarea>
+    <button onclick="runCode6()">Run Code</button>
+    <div class="feedback" id="code6-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>7. Add a new item "Item 4" to the list below. Write the function named <code>addItem</code>.</p>
+    <ul id="list7">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <textarea id="code7"></textarea>
+    <button onclick="runCode7()">Run Code</button>
+    <div class="feedback" id="code7-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>8. Toggle the visibility of the div below when the button is clicked. Write the function named <code>toggleVisibility</code>.</p>
+    <div id="div8" class="effect">This is a toggle div.</div>
+    <button id="btn8">Toggle Visibility</button>
+    <textarea id="code8"></textarea>
+    <button onclick="runCode8()">Run Code</button>
+    <div class="feedback" id="code8-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>9. Change the color of the text inside the span below to red. Write the function named <code>changeTextColor</code>.</p>
+    <span id="span9">This is some text.</span>
+    <textarea id="code9"></textarea>
+    <button onclick="runCode9()">Run Code</button>
+    <div class="feedback" id="code9-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>10. Append the text " - Appended" to the paragraph below. Write the function named <code>appendText</code>.</p>
+    <p id="p10">This is a paragraph</p>
+    <textarea id="code10"></textarea>
+    <button onclick="runCode10()">Run Code</button>
+    <div class="feedback" id="code10-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>11. Replace the text of the div below with "Replaced!". Write the function named <code>replaceText</code>.</p>
+    <div id="div11" class="effect">This text will be replaced.</div>
+    <textarea id="code11"></textarea>
+    <button onclick="runCode11()">Run Code</button>
+    <div class="feedback" id="code11-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>12. Change the border color of the input box below to green. Write the function named <code>changeBorderColor</code>.</p>
+    <input type="text" id="input12" />
+    <textarea id="code12"></textarea>
+    <button onclick="runCode12()">Run Code</button>
+    <div class="feedback" id="code12-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>13. Add the class "highlight" to the paragraph below. Write the function named <code>addClass</code>.</p>
+    <p id="p13">This paragraph will get a new class.</p>
+    <textarea id="code13"></textarea>
+    <button onclick="runCode13()">Run Code</button>
+    <div class="feedback" id="code13-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>14. Remove the class "highlight" from the paragraph below. Write the function named <code>removeClass</code>.</p>
+    <p id="p14" class="highlight">This paragraph has a class.</p>
+    <textarea id="code14"></textarea>
+    <button onclick="runCode14()">Run Code</button>
+    <div class="feedback" id="code14-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>15. Log the text content of the div below to the console. Write the function named <code>logTextContent</code>.</p>
+    <div id="div15" class="effect">Log this text.</div>
+    <textarea id="code15"></textarea>
+    <button onclick="runCode15()">Run Code</button>
+    <div class="feedback" id="code15-feedback"></div>
+</div>
+
+<script>
+    function runCode1() {
+        const code1 = document.getElementById('code1').value;
+        const feedback = document.getElementById('code1-feedback');
+        try {
+            new Function(code1 + ' changeButtonText();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode2() {
+        const code2 = document.getElementById('code2').value;
+        const feedback = document.getElementById('code2-feedback');
+        try {
+            new Function(code2 + ' changeBackgroundColor();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode3() {
+        const code3 = document.getElementById('code3').value;
+        const feedback = document.getElementById('code3-feedback');
+        try {
+            new Function(code3 + ' hideParagraph();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode4() {
+        const code4 = document.getElementById('code4').value;
+        const feedback = document.getElementById('code4-feedback');
+        try {
+            new Function(code4 + ' changeInputText();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode5() {
+        const code5 = document.getElementById('code5').value;
+        const feedback = document.getElementById('code5-feedback');
+        try {
+            new Function(code5 + ' showAlert();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode6() {
+        const code6 = document.getElementById('code6').value;
+        const feedback = document.getElementById('code6-feedback');
+        try {
+            new Function(code6 + ' changeFontSize();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode7() {
+        const code7 = document.getElementById('code7').value;
+        const feedback = document.getElementById('code7-feedback');
+        try {
+            new Function(code7 + ' addItem();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode8() {
+        const code8 = document.getElementById('code8').value;
+        const feedback = document.getElementById('code8-feedback');
+        try {
+            new Function(code8 + ' toggleVisibility();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode9() {
+        const code9 = document.getElementById('code9').value;
+        const feedback = document.getElementById('code9-feedback');
+        try {
+            new Function(code9 + ' changeTextColor();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode10() {
+        const code10 = document.getElementById('code10').value;
+        const feedback = document.getElementById('code10-feedback');
+        try {
+            new Function(code10 + ' appendText();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode11() {
+        const code11 = document.getElementById('code11').value;
+        const feedback = document.getElementById('code11-feedback');
+        try {
+            new Function(code11 + ' replaceText();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode12() {
+        const code12 = document.getElementById('code12').value;
+        const feedback = document.getElementById('code12-feedback');
+        try {
+            new Function(code12 + ' changeBorderColor();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode13() {
+        const code13 = document.getElementById('code13').value;
+        const feedback = document.getElementById('code13-feedback');
+        try {
+            new Function(code13 + ' addClass();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode14() {
+        const code14 = document.getElementById('code14').value;
+        const feedback = document.getElementById('code14-feedback');
+        try {
+            new Function(code14 + ' removeClass();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function runCode15() {
+        const code15 = document.getElementById('code15').value;
+        const feedback = document.getElementById('code15-feedback');
+        try {
+            new Function(code15 + ' logTextContent();')();
+            feedback.textContent = 'Code executed!';
+            feedback.style.color = 'green';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    // Code to initialize the event listeners
+    document.getElementById('btn1').addEventListener('click', function() {
+        if (typeof changeButtonText === 'function') {
+            changeButtonText();
+        }
+    });
+
+    document.getElementById('btn3').addEventListener('click', function() {
+        if (typeof hideParagraph === 'function') {
+            hideParagraph();
+        }
+    });
+
+    document.getElementById('btn5').addEventListener('click', function() {
+        if (typeof showAlert === 'function') {
+            showAlert();
+        }
+    });
+
+    document.getElementById('btn8').addEventListener('click', function() {
+        if (typeof toggleVisibility === 'function') {
+            toggleVisibility();
+        }
+    });
+</script>
+</body>
+</html>

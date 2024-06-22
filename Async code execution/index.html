@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Await Example</title>
+<!--    <script src="script.js" defer ></script>-->
+    <script>
+        // Async function to fetch data from an API
+async function fetchUserData() {
+    try {
+        document.getElementById('data').textContent="Loading the Users...";
+        await new Promise(r => setTimeout(r, 2000));
+        // Await the fetch request
+        let response = await fetch('https://jsonplaceholder.typicode.com/users');
+
+        // Check if the response is OK
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        // Await the conversion of the response to JSON
+        let data = await response.json();
+
+        // Log the data to the console
+        console.log(data);
+
+        // Display the data in the HTML
+        document.getElementById('data').innerHTML ="<code>" +  JSON.stringify(data, null, 2) + "</code>";
+    } catch (error) {
+        // Handle any errors that occur during the fetch
+        console.error('Error fetching data:', error);
+    }
+}
+
+
+async function fetchUserToDos() {
+    try {
+        document.getElementById('data1').textContent="Loading the TODOS...";
+        let userId= document.getElementById('userId').value
+        // Await the fetch request
+        fetch('https://jsonplaceholder.typicode.com/todos')
+            .then(response => response.json())
+            .then(data=>{
+        document.getElementById('data1').textContent="";
+               data.forEach(i=>{
+               console.log(i);
+               if(i["userId"] == userId)
+                    document.getElementById('data1').innerHTML += "<code>" + i["id"] + "."+ i["title"] + "</code><br>"})
+
+                })
+            .catch(error=> {console.error("Error:",error)})
+
+        // Check if the response is OK
+        // Display the data in the HTML
+    } catch (error) {
+        // Handle any errors that occur during the fetch
+        console.error('Error fetching data:', error);
+    }
+}
+
+    </script>
+</head>
+<body>
+<h1>Data Fetch Example</h1>
+
+<input type="button" onclick="fetchUserData()" value="Load Users"/>
+
+<br><br>
+<div id="data"></div>
+
+
+<br/><br>
+<hr/>
+<input type="text" id="userId" name="userId" placeholder="UserId"/>
+<input type="button" onclick="fetchUserToDos()" value="Load User ToDos"/>
+<br/><br>
+<div id="data1"></div>
+
+<br/><br>
+<div id="data2"> This section is fixed</div>
+
+
+
+</body>
+</html>

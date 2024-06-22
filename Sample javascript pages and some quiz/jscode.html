@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Hands-On Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .exercise {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            font-family: monospace;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>JavaScript Hands-On Exercises</h1>
+
+<div class="exercise">
+    <p>1. Write a function named <code>sum</code> that takes two numbers and returns their sum.</p>
+    <textarea id="code1"></textarea>
+    <button onclick="checkCode1()">Run Code</button>
+    <div class="feedback" id="code1-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>2. Write a function named <code>toUpperCase</code> that takes a string and returns it in uppercase.</p>
+    <textarea id="code2"></textarea>
+    <button onclick="checkCode2()">Run Code</button>
+    <div class="feedback" id="code2-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>3. Write a function named <code>max</code> that takes an array of numbers and returns the largest number.</p>
+    <textarea id="code3"></textarea>
+    <button onclick="checkCode3()">Run Code</button>
+    <div class="feedback" id="code3-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>4. Write a function named <code>countVowels</code> that takes a string and returns the number of vowels in the string.</p>
+    <textarea id="code4"></textarea>
+    <button onclick="checkCode4()">Run Code</button>
+    <div class="feedback" id="code4-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>5. Write a function named <code>filterEven</code> that takes an array of numbers and returns a new array with only the even numbers.</p>
+    <textarea id="code5"></textarea>
+    <button onclick="checkCode5()">Run Code</button>
+    <div class="feedback" id="code5-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>6. Write a function named <code>factorial</code> that takes a number and returns its factorial.</p>
+    <textarea id="code6"></textarea>
+    <button onclick="checkCode6()">Run Code</button>
+    <div class="feedback" id="code6-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>7. Write a function named <code>reverseString</code> that takes a string and returns it reversed.</p>
+    <textarea id="code7"></textarea>
+    <button onclick="checkCode7()">Run Code</button>
+    <div class="feedback" id="code7-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>8. Write a function named <code>sortStrings</code> that takes an array of strings and returns a new array with the strings sorted alphabetically.</p>
+    <textarea id="code8"></textarea>
+    <button onclick="checkCode8()">Run Code</button>
+    <div class="feedback" id="code8-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>9. Write a function named <code>getObjectKeys</code> that takes an object and returns an array of its keys.</p>
+    <textarea id="code9"></textarea>
+    <button onclick="checkCode9()">Run Code</button>
+    <div class="feedback" id="code9-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>10. Write a function named <code>isPalindrome</code> that takes a string and returns true if it's a palindrome, false otherwise.</p>
+    <textarea id="code10"></textarea>
+    <button onclick="checkCode10()">Run Code</button>
+    <div class="feedback" id="code10-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>11. Write a function named <code>addToArray</code> that takes an array and a number, and returns a new array with the number added to the end.</p>
+    <textarea id="code11"></textarea>
+    <button onclick="checkCode11()">Run Code</button>
+    <div class="feedback" id="code11-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>12. Write a function named <code>mostFrequentChar</code> that takes a string and returns the character that appears the most.</p>
+    <textarea id="code12"></textarea>
+    <button onclick="checkCode12()">Run Code</button>
+    <div class="feedback" id="code12-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>13. Write a function named <code>numberToDigits</code> that takes a number and returns an array of its digits.</p>
+    <textarea id="code13"></textarea>
+    <button onclick="checkCode13()">Run Code</button>
+    <div class="feedback" id="code13-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>14. Write a function named <code>getValueByKey</code> that takes an object and a key, and returns the value associated with the key.</p>
+    <textarea id="code14"></textarea>
+    <button onclick="checkCode14()">Run Code</button>
+    <div class="feedback" id="code14-feedback"></div>
+</div>
+
+<div class="exercise">
+    <p>15. Write a function named <code>getValuesByKey</code> that takes an array of objects and a key, and returns an array of the values associated with the key.</p>
+    <textarea id="code15"></textarea>
+    <button onclick="checkCode15()">Run Code</button>
+    <div class="feedback" id="code15-feedback"></div>
+</div>
+
+<script>
+    function checkCode1() {
+        const code1 = document.getElementById('code1').value;
+        const feedback = document.getElementById('code1-feedback');
+        try {
+            const func = new Function(code1 + ' return sum(2, 3);');
+            const result = func();
+            feedback.textContent = (result === 5) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (result === 5) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode2() {
+        const code2 = document.getElementById('code2').value;
+        const feedback = document.getElementById('code2-feedback');
+        try {
+            const func = new Function(code2 + ' return toUpperCase("hello");');
+            const result = func();
+            feedback.textContent = (result === "HELLO") ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (result === "HELLO") ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode3() {
+        const code3 = document.getElementById('code3').value;
+        const feedback = document.getElementById('code3-feedback');
+        try {
+            const func = new Function(code3 + ' return max([1, 2, 3, 4, 5]);');
+            const result = func();
+            feedback.textContent = (result === 5) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (result === 5) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode4() {
+        const code4 = document.getElementById('code4').value;
+        const feedback = document.getElementById('code4-feedback');
+        try {
+            const func = new Function(code4 + ' return countVowels("hello");');
+            const result = func();
+            feedback.textContent = (result === 2) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (result === 2) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode5() {
+        const code5 = document.getElementById('code5').value;
+        const feedback = document.getElementById('code5-feedback');
+        try {
+            const func = new Function(code5 + ' return filterEven([1, 2, 3, 4, 5]);');
+            const result = func();
+            feedback.textContent = (result.length === 2 && result.includes(2) && result.includes(4)) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (result.length === 2 && result.includes(2) && result.includes(4)) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode6() {
+        const code6 = document.getElementById('code6').value;
+        const feedback = document.getElementById('code6-feedback');
+        try {
+            const func = new Function(code6 + ' return factorial(5);');
+            const result = func();
+            feedback.textContent = (result === 120) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (result === 120) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode7() {
+        const code7 = document.getElementById('code7').value;
+        const feedback = document.getElementById('code7-feedback');
+        try {
+            const func = new Function(code7 + ' return reverseString("hello");');
+            const result = func();
+            feedback.textContent = (result === "olleh") ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (result === "olleh") ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode8() {
+        const code8 = document.getElementById('code8').value;
+        const feedback = document.getElementById('code8-feedback');
+        try {
+            const func = new Function(code8 + ' return sortStrings(["banana", "apple", "cherry"]);');
+            const result = func();
+            feedback.textContent = (JSON.stringify(result) === JSON.stringify(["apple", "banana", "cherry"])) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (JSON.stringify(result) === JSON.stringify(["apple", "banana", "cherry"])) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode9() {
+        const code9 = document.getElementById('code9').value;
+        const feedback = document.getElementById('code9-feedback');
+        try {
+            const func = new Function(code9 + ' return getObjectKeys({name: "John", age: 30});');
+            const result = func();
+            feedback.textContent = (JSON.stringify(result) === JSON.stringify(["name", "age"])) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (JSON.stringify(result) === JSON.stringify(["name", "age"])) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode10() {
+        const code10 = document.getElementById('code10').value;
+        const feedback = document.getElementById('code10-feedback');
+        try {
+            const func = new Function(code10 + ' return isPalindrome("racecar");');
+            const result = func();
+            feedback.textContent = (result === true) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (result === true) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode11() {
+        const code11 = document.getElementById('code11').value;
+        const feedback = document.getElementById('code11-feedback');
+        try {
+            const func = new Function(code11 + ' return addToArray([1, 2, 3], 4);');
+            const result = func();
+            feedback.textContent = (JSON.stringify(result) === JSON.stringify([1, 2, 3, 4])) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (JSON.stringify(result) === JSON.stringify([1, 2, 3, 4])) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode12() {
+        const code12 = document.getElementById('code12').value;
+        const feedback = document.getElementById('code12-feedback');
+        try {
+            const func = new Function(code12 + ' return mostFrequentChar("javascript");');
+            const result = func();
+            feedback.textContent = (result === "a") ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (result === "a") ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode13() {
+        const code13 = document.getElementById('code13').value;
+        const feedback = document.getElementById('code13-feedback');
+        try {
+            const func = new Function(code13 + ' return numberToDigits(12345);');
+            const result = func();
+            feedback.textContent = (JSON.stringify(result) === JSON.stringify([1, 2, 3, 4, 5])) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (JSON.stringify(result) === JSON.stringify([1, 2, 3, 4, 5])) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode14() {
+        const code14 = document.getElementById('code14').value;
+        const feedback = document.getElementById('code14-feedback');
+        try {
+            const func = new Function(code14 + ' return getValueByKey({name: "John", age: 30}, "name");');
+            const result = func();
+            feedback.textContent = (result === "John") ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (result === "John") ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+
+    function checkCode15() {
+        const code15 = document.getElementById('code15').value;
+        const feedback = document.getElementById('code15-feedback');
+        try {
+            const func = new Function(code15 + ' return getValuesByKey([{name: "John", age: 30}, {name: "Jane", age: 25}], "name");');
+            const result = func();
+            feedback.textContent = (JSON.stringify(result) === JSON.stringify(["John", "Jane"])) ? 'Correct!' : 'Incorrect.';
+            feedback.style.color = (JSON.stringify(result) === JSON.stringify(["John", "Jane"])) ? 'green' : 'red';
+        } catch (error) {
+            feedback.textContent = 'Error: ' + error.message;
+            feedback.style.color = 'red';
+        }
+    }
+</script>
+</body>
+</html>

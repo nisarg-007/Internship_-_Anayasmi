@@ -40,7 +40,6 @@ const ListingDetails = () => {
 
   console.log(listing)
 
-
   /* BOOKING CALENDAR */
   const [dateRange, setDateRange] = useState([
     {
@@ -57,12 +56,12 @@ const ListingDetails = () => {
 
   const start = new Date(dateRange[0].startDate);
   const end = new Date(dateRange[0].endDate);
-  const dayCount = Math.round(end - start) / (1000 * 60 * 60 * 24); // Calculate the difference in day unit
+  const dayCount = Math.round((end - start) / (1000 * 60 * 60 * 24)); // Calculate the difference in day unit
 
   /* SUBMIT BOOKING */
-  const customerId = useSelector((state) => state?.user?._id)
+  const customerId = useSelector((state) => state?.user?._id);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     try {
@@ -73,23 +72,23 @@ const ListingDetails = () => {
         startDate: dateRange[0].startDate.toDateString(),
         endDate: dateRange[0].endDate.toDateString(),
         totalPrice: listing.price * dayCount,
-      }
+      };
 
       const response = await fetch("http://localhost:3001/bookings/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(bookingForm)
-      })
+        body: JSON.stringify(bookingForm),
+      });
 
       if (response.ok) {
-        navigate(`/${customerId}/trips`)
+        navigate(`/${customerId}/trips`);
       }
     } catch (err) {
-      console.log("Submit Booking Failed.", err.message)
+      console.log("Submit Booking Failed.", err.message);
     }
-  }
+  };
 
   return loading ? (
     <Loader />
@@ -106,6 +105,7 @@ const ListingDetails = () => {
         <div className="photos">
           {listing.listingPhotoPaths?.map((item) => (
             <img
+              key={item} // Added key prop
               src={`http://localhost:3001/${item.replace("public", "")}`}
               alt="listing photo"
             />
@@ -128,6 +128,7 @@ const ListingDetails = () => {
               "public",
               ""
             )}`}
+            alt="host profile"
           />
           <h3>
             Hosted by {listing.creator.firstName} {listing.creator.lastName}
@@ -164,7 +165,11 @@ const ListingDetails = () => {
           <div>
             <h2>How long do you want to stay?</h2>
             <div className="date-range-calendar">
-              <DateRange ranges={dateRange} onChange={handleSelect} />
+              <DateRange
+                ranges={dateRange}
+                onChange={handleSelect}
+                minDate={new Date()} // Prevent past dates from being selected
+              />
               {dayCount > 1 ? (
                 <h2>
                   ${listing.price} x {dayCount} nights
